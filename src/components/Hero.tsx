@@ -13,6 +13,8 @@ function Hero() {
   });
 
   useEffect(() => {
+    if (typeof window === "undefined") return; // ❌ تجنب تشغيل الكود في بيئة الخادم
+
     const handleResize = () => {
       setWindowSize({
         width: window.innerWidth,
@@ -21,35 +23,34 @@ function Hero() {
     };
 
     handleResize();
-
     window.addEventListener("resize", handleResize);
 
-    // Cleanup event listener
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <div className="min-h-screen overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-white rounded-full opacity-10"
-            initial={{
-              y: 0,
-              x: Math.random() * windowSize.width,
-            }}
-            animate={{
-              y: windowSize.height,
-              x: Math.random() * windowSize.width,
-            }}
-            transition={{
-              duration: Math.random() * 5 + 5,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-        ))}
+        {typeof window !== "undefined" &&
+          [...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-white rounded-full opacity-10"
+              initial={{
+                y: 0,
+                x: Math.random() * windowSize.width,
+              }}
+              animate={{
+                y: windowSize.height,
+                x: Math.random() * windowSize.width,
+              }}
+              transition={{
+                duration: Math.random() * 5 + 5,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+          ))}
       </div>
 
       <section
