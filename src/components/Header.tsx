@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; 
 import { Button } from "./ui/button";
 
 function Header() {
@@ -7,7 +8,13 @@ function Header() {
       <div className="container max-w-3xl w-full px-4 mx-auto ">
         <div className="relative flex justify-between items-center border border-slate-700 p-2.5 rounded-full bg-white/20 backdrop-blur-lg shadow-lg">
           <div className="flex items-center">
-            <img src="/logo.png" alt="logo" className="h-11 w-11" />
+            <Image 
+              src="/logo.png" 
+              alt="logo" 
+              width={44} 
+              height={44} 
+              className="h-11 w-11" 
+            />
             <h1 className="font-bold flex flex-row text-white">
               Syntax <span className="text-green-400">Code</span>
             </h1>

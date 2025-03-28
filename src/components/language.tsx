@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
+import Image from "next/image";
 
 const languages = [
   { name: "Java", img: "/java.png" },
@@ -17,8 +18,8 @@ const languages = [
 const LanguageTicker = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
-  // Duplicate the languages array to be the line infinte
-  const duplicatedLanguages = [...languages, ...languages , ...languages];
+  // Duplicate the languages array to be the line infinite
+  const duplicatedLanguages = [...languages, ...languages, ...languages];
 
   return (
     <div className="relative w-full overflow-hidden py-8 bg-gradient-to-r from-[#1A1A2E] to-[#363636]">
@@ -35,10 +36,12 @@ const LanguageTicker = () => {
               className="flex items-center space-x-2 p-2 hover:scale-110 transition-transform duration-300"
               whileHover={{ scale: 1.1 }}
             >
-              <img
+              <Image
                 src={lang.img}
                 alt={lang.name}
-                className="w-8 h-8 object-contain"
+                width={32}
+                height={32} 
+                className="object-contain"
               />
               <span className="text-xl text-white">{lang.name}</span>
             </motion.div>
@@ -60,10 +63,12 @@ const LanguageTicker = () => {
               className="flex items-center space-x-4 px-6 hover:scale-110 transition-transform duration-300"
               whileHover={{ scale: 1.1 }}
             >
-              <img
+              <Image
                 src={lang.img}
                 alt={lang.name}
-                className="w-8 h-8 object-contain"
+                width={32}
+                height={32}
+                className="object-contain"
               />
               <span className="text-xl">{lang.name}</span>
             </motion.div>

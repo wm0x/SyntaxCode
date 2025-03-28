@@ -8,6 +8,7 @@ import {
   RiLightbulbFlashLine,
 } from "react-icons/ri";
 import { useMediaQuery } from "react-responsive";
+import Image from "next/image"; 
 
 function AboutSyntax() {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
@@ -56,10 +57,12 @@ function AboutSyntax() {
               duration: isMobile ? 0.5 : 0.8,
             }}
           >
-            <img
-              src="/logo.png"
+            <Image
+              src="/logo.png" 
               alt="logo"
               className="h-20 w-20 rounded-full shadow-lg"
+              width={80} 
+              height={80}
             />
           </motion.div>
 

@@ -83,7 +83,7 @@ const ProfileCard = ({
           <motion.h3 className="text-[#6366f1]  font-semibold font-[Tajawal] text-center mt-3 text-sm">
             {title}
           </motion.h3>
-
+          {/** first upload */}
           <motion.p className="text-[#fbbf24] text-lg mt-5 px-4 text-center">
             {department}
           </motion.p>

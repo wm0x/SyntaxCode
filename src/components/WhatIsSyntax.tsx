@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 function WhatIsSyntax() {
   return (
@@ -22,28 +23,27 @@ function WhatIsSyntax() {
               title: "مشاريع متقدمة",
               description:
                 "تطوير أنظمة معقدة مثل المتاجر الإلكترونية ولوحات التحكم",
-              image1: "programning_project.png",
+              image1: "/programming_project.png", 
               translate: "-translate-y-8 sm:-translate-y-5 ",
             },
             {
               title: "تحديات برمجية",
               description:
                 "حل مسائل خوارزمية وتحديات مثل LeetCode و منصة سطر",
-              image1: "dev_challenge.png",
+              image1: "/dev_challenge.png", 
               location: "-translate-y-2",
-
               translate: " sm:translate-y-8 ",
             },
             {
               title: "تطوير الويب",
               description: "إنشاء مواقع ويب باستخدام React و Next.js",
-              image1: "web dev.png",
+              image1: "/web_dev.png", 
               translate: "translate-y-5 sm:-translate-y-5 ",
             },
             {
               title: "برمجة الذكاء الاصطناعي",
               description: "بناء نماذج تعلم آلي باستخدام Python ",
-              image1: "ai.png",
+              image1: "/ai.png", 
               location: "h-13 w-13",
               translate: "translate-y-10 ",
             },
@@ -52,9 +52,11 @@ function WhatIsSyntax() {
               key={index}
               className={`relative transition-transform duration-300 ease-in-out transform hover:scale-105 ${item.translate}`}
             >
-              <img
+              <Image
                 src={item.image1}
                 alt={item.title}
+                width={100} 
+                height={100} 
                 className={`absolute left-1/2 transform -translate-x-1/2 -top-10 sm:-top-14 w-16 sm:w-24 z-10 ${item.location}`}
               />
 
