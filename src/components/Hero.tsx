@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import im1 from "../../public/lottie/coding.json";
@@ -13,44 +11,44 @@ function Hero() {
   });
 
   useEffect(() => {
-    if (typeof window === "undefined") return; // ❌ تجنب تشغيل الكود في بيئة الخادم
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };
 
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
+      handleResize();
+      window.addEventListener("resize", handleResize);
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
+      // Cleanup event listener
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
 
   return (
     <div className="min-h-screen overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
-        {typeof window !== "undefined" &&
-          [...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-white rounded-full opacity-10"
-              initial={{
-                y: 0,
-                x: Math.random() * windowSize.width,
-              }}
-              animate={{
-                y: windowSize.height,
-                x: Math.random() * windowSize.width,
-              }}
-              transition={{
-                duration: Math.random() * 5 + 5,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-          ))}
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-white rounded-full opacity-10"
+            initial={{
+              y: 0,
+              x: Math.random() * windowSize.width,
+            }}
+            animate={{
+              y: windowSize.height,
+              x: Math.random() * windowSize.width,
+            }}
+            transition={{
+              duration: Math.random() * 5 + 5,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
+        ))}
       </div>
 
       <section
