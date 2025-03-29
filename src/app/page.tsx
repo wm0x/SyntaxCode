@@ -2,7 +2,10 @@
 // import Benefits from "@/components/Benefits";
 // import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import dynamic from "next/dynamic";
+const Hero = dynamic(() => import("@/components/Header"), {
+  ssr: false,
+});
 // import HowWeAre from "@/components/HowWeAre";
 // import LanguageTicker from "@/components/language";
 // import WhatIsSyntax from "@/components/WhatIsSyntax";

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import im1 from "../../public/lottie/coding.json";
-import AboutSyntax from "./AboutSyntax";
+const AboutSyntax = dynamic(() => import("./AboutSyntax") , {
+  ssr: false,
+}) ;
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
 function Hero() {
   const [windowSize, setWindowSize] = useState({
