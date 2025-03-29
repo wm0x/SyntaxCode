@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import im1 from "../../public/lottie/coding.json";
-const AboutSyntax = dynamic(() => import("./AboutSyntax") , {
-  ssr: false,
-}) ;
+const AboutSyntax = dynamic(() => import("./AboutSyntax")) ;
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
