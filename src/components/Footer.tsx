@@ -54,7 +54,7 @@ function Footer() {
         <p className="mt-8 text-center text-sm border-t border-fuchsia-700 pt-4 text-white flex justify-center items-center">
           SyntaxCode © 2025 - Dev by
           <a
-            href="http://"
+            href="https://github.com/wm0x/"
             className="text-red-500 flex items-center ml-1 hover:underline"
           >
             wm <span className=" text-black">0</span>
