@@ -17,7 +17,7 @@ function HowWeAre() {
         <div className="col-span-full flex justify-center">
             <ProfileCard
               title={" إدارة وإنشاء الموقع"}
-              img={"myimg.jpeg"}
+              img={"myIcon.png"}
               name={"علي الشهري"}
               department={"👨🏻‍💻 علوم حاسب"}
               founder="المؤسس"
@@ -26,21 +26,21 @@ function HowWeAre() {
 
         <ProfileCard
           title={"إدارة التحديات"}
-          img={"salman.jpeg"}
+          img={"myIcon.png"}
           name={"سلمان العتيبي"}
           department={"👨🏻‍💻 تقنية المعلومات"}
           co_founder="عضو مؤسس"
         />
         <ProfileCard
           title={"إدارة الدورات والفعاليات"}
-          img={"hail.jpeg"}
+          img={"myIcon.png"}
           name={"هايل المطيري"}
           department={"👨🏻‍💻 تقنية المعلومات"}
           co_founder="عضو مؤسس"
         />
         <ProfileCard
           title={"العلاقات العامة"}
-          img={"nader.jpeg"}
+          img={"myIcon.png"}
           name={"نادر العتيبي"}
           department={"👨🏻‍💻 تقنية المعلومات"}
           co_founder="عضو مؤسس"
